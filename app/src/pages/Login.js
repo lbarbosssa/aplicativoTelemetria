@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     // height: screenDimesions.height *0.33,
   },
   text1nd: {
-    fontSize: 60,
+    fontSize: 55,
     color: "#F1592A",
     paddingLeft: 10,
     fontFamily: "Bitter-Italic"
