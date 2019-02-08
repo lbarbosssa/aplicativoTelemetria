@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import { View, StyleSheet, TextInput, Image, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TextInput, Image, Text, TouchableOpacity, Dimensions } from "react-native";
+
+const screenDimesions = Dimensions.get('window')
 
 export default class LoginPage extends Component {
   render() {
@@ -8,13 +10,13 @@ export default class LoginPage extends Component {
       <View style={styles.container}>
         <Image 
         style={styles.image}
-        source={{uri: 'https://www.braspress.com/wp-content/themes/braspress/img/braspress-logo.png'}} 
+        source={require('../../assets/imgs/new_Braspress.png')} 
         />
-        <Text style={styles.textBTU} >Telemetria</Text>
+        <Text style={styles.text2nd} >Telemetria</Text>
         <TextInput
           style={[styles.input, styles.textGlobal]}
           placeholder="Senha telemetria"
-          placeholderTextColor="#EB8822"
+          placeholderTextColor="#cecccc"
           keyboardType="numeric"
           secureTextEntry
           maxLength={6}
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#003D7B"
+    backgroundColor: "#003D7B",
   },
   input: {
     textAlign: "center",
@@ -46,12 +48,12 @@ const styles = StyleSheet.create({
   },
   image: {
     //aspectRatio: 1,
-    width: 270,
-    height: 40
+    width: screenDimesions.width -30,
+    height: screenDimesions.height -715,
   },
-  textBTU: {
+  text2nd: {
     fontSize: 20,
-    color: "#EB8822",
+    color: "#F1592A",
     paddingBottom: 5,
     fontFamily: 'Bitter-Italic',
     alignSelf: 'flex-end',
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     textAlign: "center",   
   },
   textGlobal: {
-    color: "#EB8822",
+    color: "#cecccc",
     fontSize: 18,
     fontFamily: 'Bitter-Regular',
   }

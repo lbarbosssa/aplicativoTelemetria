@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { View, StyleSheet, Image, Text, Animated, Easing, Dimensions } from "react-native";
 
-const widthScrenn = Dimensions.get('window')
+const screenDimesions = Dimensions.get('window')
 
 export default class Splash extends Component {
     // componentWillMount(){
@@ -11,24 +11,28 @@ export default class Splash extends Component {
 
     componentWillMount() {
         this.barrinhaAnimada = new Animated.Value(0)
-        setInterval(() => {
+        setTimeout(() => {
             this.props.navigation.navigate('Login')
-        }, 1500)
+        }, 0)
     }
     componentDidMount() {
         Animated.timing(this.barrinhaAnimada, {
-            toValue: widthScrenn.width,
-            duration: 1500,
-            easing: Easing.bounce
+            toValue: screenDimesions.width,
+            duration: 1000,
+            //easing: Easing.bounce
         }).start()
+
+
     }
 
     render() {
         const barrinha = { width: this.barrinhaAnimada }
 
+
         return (
             <View style={styles.container}>
-                <Animated.View style={[styles.box, barrinha]} />
+                {/* <Image source={require('../../assets/imgs/truck.png')} /> */}
+                <Animated.View style={[styles.barra, barrinha]} />
 
             </View>
         )
@@ -47,10 +51,9 @@ const styles = StyleSheet.create({
         fontSize: 28,
         color: 'white'
     },
-    box: {
-        backgroundColor: 'red',
-        width: 1,
-        height: 10
+    barra: {
+        backgroundColor: '#EB8822',
+        height: 4
     }
 
 })
