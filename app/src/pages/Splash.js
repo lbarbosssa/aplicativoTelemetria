@@ -11,27 +11,43 @@ export default class Splash extends Component {
 
     componentWillMount() {
         this.barrinhaAnimada = new Animated.Value(0)
+        this.caminhaoAnimado = new Animated.Value(0)
+
         setTimeout(() => {
             this.props.navigation.navigate('Login')
-        }, 0)
+        }, 2200)
     }
     componentDidMount() {
+
         Animated.timing(this.barrinhaAnimada, {
             toValue: screenDimesions.width,
             duration: 1000,
             //easing: Easing.bounce
         }).start()
 
+        setTimeout(() => {
+            Animated.timing(this.caminhaoAnimado, {
+                toValue: screenDimesions.width - 130,
+                duration: 1000,
+                easing: Easing.bounce
+            }).start()
+
+        }, 900)
+
+
 
     }
 
     render() {
         const barrinha = { width: this.barrinhaAnimada }
+        const caminhao = { marginLeft: this.caminhaoAnimado}
 
 
         return (
             <View style={styles.container}>
-                {/* <Image source={require('../../assets/imgs/truck.png')} /> */}
+                <Animated.Image 
+                source={require('../../assets/imgs/truck.png')} 
+                style={[styles.truck, caminhao]}/>
                 <Animated.View style={[styles.barra, barrinha]} />
 
             </View>
@@ -52,8 +68,13 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     barra: {
-        backgroundColor: '#EB8822',
+        backgroundColor: '#F1592A',
         height: 4
+    },
+    truck: {
+        alignSelf: 'flex-start',
+        width: screenDimesions.width -300,
+        height: 100
     }
 
 })
