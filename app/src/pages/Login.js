@@ -8,15 +8,17 @@ export default class LoginPage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image 
+        {/* <Image 
         style={styles.image}
         source={require('../../assets/imgs/new_Braspress.png')} 
-        />
+        resizeMode="contain"
+        /> */}
+        <Text style={styles.text1nd} >Braspress</Text>
         <Text style={styles.text2nd} >Telemetria</Text>
         <TextInput
           style={[styles.input, styles.textGlobal]}
           placeholder="Senha telemetria"
-          placeholderTextColor="#cecccc"
+          placeholderTextColor="#dbdbdb"
           keyboardType="numeric"
           secureTextEntry
           maxLength={6}
@@ -47,9 +49,15 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   image: {
-    //aspectRatio: 1,
-    width: screenDimesions.width -30,
-    height: screenDimesions.height -715,
+    // flex: 1,
+    // width: screenDimesions.width *0.1000,
+    // height: screenDimesions.height *0.33,
+  },
+  text1nd: {
+    fontSize: 60,
+    color: "#F1592A",
+    paddingBottom: 5,
+    fontFamily: 'Bitter-Italic',
   },
   text2nd: {
     fontSize: 20,
@@ -71,7 +79,7 @@ const styles = StyleSheet.create({
     textAlign: "center",   
   },
   textGlobal: {
-    color: "#cecccc",
+    color: "#dbdbdb",
     fontSize: 18,
     fontFamily: 'Bitter-Regular',
   }
