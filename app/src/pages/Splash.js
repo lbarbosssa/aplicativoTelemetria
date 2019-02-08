@@ -51,7 +51,6 @@ export default class Splash extends Component {
         const caminhao = { marginLeft: this.caminhaoAnimado}
         const apresentarElementos = { opacity: this.apresentarElementos}
 
-
         return (
             <View style={styles.container}>
                 <Animated.Image 

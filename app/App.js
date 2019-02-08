@@ -3,12 +3,12 @@ import LoginPage from "./src/pages/Login";
 import Splash from './src/pages/Splash'
 
 const AppNavigator = createStackNavigator({
-    'Splash': {
-      screen: Splash,
-      navigationOptions: {
-        header: null
-      }
-    },
+    // 'Splash': {
+    //   screen: Splash,
+    //   navigationOptions: {
+    //     header: null
+    //   }
+    // },
     'Login': {
     screen: LoginPage,
     navigationOptions: {
