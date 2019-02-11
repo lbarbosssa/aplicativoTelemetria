@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { View, StyleSheet, Image, Text, Animated, Easing, Dimensions } from "react-native";
+import { View, StyleSheet, Image, Text, Animated, Easing, Dimensions, StatusBar } from "react-native";
 
 const screenDimesions = Dimensions.get('window')
 
@@ -53,6 +53,7 @@ export default class Splash extends Component {
 
         return (
             <View style={styles.container}>
+            <StatusBar barStyle='light-content'/>
                 <Animated.Image 
                 source={require('../../assets/imgs/truck.png')} 
                 style={[styles.truck, caminhao, apresentarElementos]}/>

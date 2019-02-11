@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     fontFamily: "Bitter-Italic",
     alignSelf: "flex-end",
-    paddingRight: 35
+    paddingRight: 10
   },
   button: {
     marginTop: 10,
