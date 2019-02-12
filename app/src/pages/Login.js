@@ -11,10 +11,33 @@ import {
 } from "react-native";
 
 export default class LoginPage extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      driverCode: ''
+    }
+  }
+
+  onChangeText(driverCode) {
+    this.setState({ driverCode })
+  }
+
+  onPress(){
+    console.log(this.state.driverCode)
+    if (this.state.driverCode === '123456'){
+      this.props.navigation.navigate('Home')
+    }
+  }
+
+
+
   render() {
+    //const { driverCode } = this.state
     return (
+
       <SafeAreaView style={styles.container}>
-      <StatusBar barStyle='light-content'/>
+        <StatusBar barStyle='light-content' />
         <KeyboardAvoidingView behavior="padding" style={styles.safeArea}>
           <Text style={styles.text1nd}>Braspress</Text>
           <Text style={styles.text2nd}>Telemetria</Text>
@@ -25,8 +48,9 @@ export default class LoginPage extends Component {
             keyboardType="numeric"
             secureTextEntry
             maxLength={6}
+            onChangeText={(driverCode) => this.onChangeText(driverCode)}
           />
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => this.onPress()}>
             <Text style={[styles.textButton, styles.textGlobal]}> Entrar </Text>
           </TouchableOpacity>
         </KeyboardAvoidingView>
@@ -74,7 +98,7 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10,
     backgroundColor: "#003366",
-    
+
     borderRadius: 6
   },
   textButton: {

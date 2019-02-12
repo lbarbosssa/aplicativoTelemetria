@@ -1,6 +1,7 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
-import LoginPage from "./src/pages/Login";
 import Splash from './src/pages/Splash'
+import LoginPage from "./src/pages/Login";
+import HomePage from './src/pages/Home'
 
 const AppNavigator = createStackNavigator({
     'Splash': {
@@ -14,7 +15,13 @@ const AppNavigator = createStackNavigator({
     navigationOptions: {
       header: null
     }
+  },
+  'Home': {
+  screen: HomePage,
+  navigationOptions: {
+    
   }
+}
   },
   {
     defaultNavigationOptions: {
@@ -22,6 +29,7 @@ const AppNavigator = createStackNavigator({
     }
   }
 );
+
 
 const AppContainer = createAppContainer(AppNavigator);
 
