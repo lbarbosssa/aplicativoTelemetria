@@ -25,7 +25,7 @@ export default class LoginPage extends Component {
 
   onPress(){
     console.log(this.state.driverCode)
-    if (this.state.driverCode === '123456'){
+    if (this.state.driverCode === '1234567'){
       this.props.navigation.navigate('Home')
     }
   }
@@ -47,7 +47,7 @@ export default class LoginPage extends Component {
             placeholderTextColor="#dbdbdb"
             keyboardType="numeric"
             secureTextEntry
-            maxLength={6}
+            maxLength={7}
             onChangeText={(driverCode) => this.onChangeText(driverCode)}
           />
           <TouchableOpacity style={styles.button} onPress={() => this.onPress()}>
