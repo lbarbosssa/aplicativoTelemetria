@@ -17,4 +17,18 @@ const Estilo = StyleSheet.create({
         fontSize: 20
     }
 })
+
+export const EstiloHeader = StyleSheet.create({
+    header: {
+    backgroundColor: '#003D7B',
+    color: '#fff'
+  },
+    btnHeader: {
+        color: '#F1592A'
+    },
+    title: {
+        color: '#dbdbdb'
+    }
+
+})
 export default Estilo

@@ -1,26 +1,26 @@
 import React, { Component } from "react";
 
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import {
   Icon,
-  Header,
-  Left,
   Button,
-  Container,
-  Right,
-  Body,
-  Title
+  Container  
 } from "native-base";
-import { HeaderWithDrawer } from "../components/MyHeader";
+import { MyHeader } from "../components/MyHeader";
+import HomeInfo from "../components/HomeInfo";
+import Estilo, { EstiloHeader } from "../Estilo";
 
 export default class HomePage extends Component {
   render() {
     return (
-      <HeaderWithDrawer title="Home" componentRender='HomeInfo'>
+      <Container>
+      <MyHeader title="Inicio" componentRender='HomeInfo'>
         <Button transparent>
-          <Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />
+          <Icon name="menu" style={EstiloHeader.btnHeader} onPress={() => this.props.navigation.openDrawer()} />
         </Button>
-      </HeaderWithDrawer>
+      </MyHeader>
+        <HomeInfo />
+      </Container>
     );
   }
 }

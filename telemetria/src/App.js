@@ -64,8 +64,8 @@ const AppDrawerNavigator = createDrawerNavigator({
 })
 
 const AppSwitchNavigator = createSwitchNavigator({
-  Welcome: { screen: Splash },
-  Login: { screen: LoginPage },
+  // Welcome: { screen: Splash },
+  // Login: { screen: LoginPage },
   Home: { screen: AppDrawerNavigator },
   RelatorioMensal : {screen: RelMensal}
 })
