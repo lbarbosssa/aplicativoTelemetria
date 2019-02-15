@@ -29,7 +29,8 @@ const AppStackNavigator = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
-      title: 'Telemetria'
+      title: 'Telemetria',
+      drawerLockMode: 'locked-open'
     }
   }
 )
