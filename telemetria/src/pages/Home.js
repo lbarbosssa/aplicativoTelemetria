@@ -14,7 +14,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <Container>
-      <MyHeader title="Inicio" componentRender='HomeInfo'>
+      <MyHeader title="Inicio">
         <Button transparent>
           <Icon name="menu" style={EstiloHeader.btnHeader} onPress={() => this.props.navigation.openDrawer()} />
         </Button>
@@ -24,11 +24,3 @@ export default class HomePage extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});

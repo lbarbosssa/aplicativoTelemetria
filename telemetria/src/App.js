@@ -10,6 +10,8 @@ import RelMensal from './pages/RelatorioMensal';
 
 
 
+
+
 const customDrawerComponent = (props) => (
   <SafeAreaView style={{flex: 1}}>
     <View style={styles.headerDrawer}>
@@ -32,11 +34,11 @@ export default App
 
 
 const AppDrawerNavigator = createDrawerNavigator({
-   Home: {
+   Inicio: {
     screen: HomePage,
     navigationOptions: {
         drawerIcon: ({tintColor}) =>  (
-            <Icon name='home'/>
+            <Icon name='home' style={{color: tintColor}}/>
         )
     }
   },
@@ -44,7 +46,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     screen: RelMensal,
     navigationOptions: {
         drawerIcon: ({tintColor}) =>  (
-            <Icon name='list'/>
+            <Icon name='list' style={{color: tintColor}}/>
         ),
         title: 'Relatório Mensal'
     }
@@ -60,24 +62,22 @@ const AppDrawerNavigator = createDrawerNavigator({
     }
   }
 },{
-  contentComponent: customDrawerComponent
+  contentComponent: customDrawerComponent,
+  contentOptions: {
+    activeTintColor: '#F1592A'
+  }
 })
 
 const AppSwitchNavigator = createSwitchNavigator({
-  // Welcome: { screen: Splash },
-  // Login: { screen: LoginPage },
+  Welcome: { screen: Splash },
   Home: { screen: AppDrawerNavigator },
-  RelatorioMensal : {screen: RelMensal}
+  RelatorioMensal : {screen: RelMensal},
+  Login: { screen: LoginPage },
 })
 
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   headerDrawer: {
     height: 150,
     backgroundColor: '#fffffe',

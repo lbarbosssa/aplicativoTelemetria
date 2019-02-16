@@ -15,7 +15,7 @@ const Estilo = StyleSheet.create({
     },
     cardTextHeader: {
         fontSize: 20
-    }
+    },
 })
 
 export const EstiloHeader = StyleSheet.create({

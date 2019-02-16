@@ -1,33 +1,25 @@
 import React, { Component } from "react";
 
 import {
-  View,
-  StyleSheet,
-  Text
-} from "react-native";
-import {
   Icon,
-  Header,
-  Left,
   Button,
-  Container,
-  Right,
-  Body,
-  Title
+  Container  
 } from "native-base";
-import MyHeader from "../components/MyHeader";
+import { MyHeader } from "../components/MyHeader";
+import HomeInfo from "../components/HomeInfo";
+import { EstiloHeader } from "../Estilo";
 
 export default class RelMensal extends Component {
   render() {
+    return (
+      <Container>
+      <MyHeader title="Relatório Mensal">
+        <Button transparent>
+          <Icon name="arrow-back" style={EstiloHeader.btnHeader} onPress={() => this.props.navigation.goBack()} />
+        </Button>
+      </MyHeader>
     
-    return <Text>Rel Mensal</Text>
+      </Container>
+    );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
