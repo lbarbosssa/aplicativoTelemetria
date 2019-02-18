@@ -59,7 +59,7 @@ const AppDrawerNavigator = DrawerNavigator({
             <Icon name='log-out' style={{color: tintColor}}/>
         ),
         title: 'Sair',
-        //drawerLockMode: 'locked-closed'
+        drawerLockMode: 'locked-closed'
     }
   },
   Splash: {
