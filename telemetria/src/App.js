@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
-import { createDrawerNavigator, DrawerItems, createSwitchNavigator } from 'react-navigation'
+import { DrawerNavigator, DrawerItems, createSwitchNavigator } from 'react-navigation'
 import { Icon } from 'native-base';
 
 import Splash from './pages/Splash'
@@ -27,14 +27,15 @@ const customDrawerComponent = (props) => (
 
 class App extends Component {
   render() {
-    return <AppSwitchNavigator /> 
+    return <AppDrawerNavigator /> 
 }
 }
 export default App
 
 
-const AppDrawerNavigator = createDrawerNavigator({
-   Inicio: {
+const AppDrawerNavigator = DrawerNavigator({
+  
+   Home: {
     screen: HomePage,
     navigationOptions: {
         drawerIcon: ({tintColor}) =>  (
@@ -55,25 +56,34 @@ const AppDrawerNavigator = createDrawerNavigator({
     screen: LoginPage,
     navigationOptions: {
         drawerIcon: ({tintColor}) =>  (
-            <Icon name='log-out'/>
+            <Icon name='log-out' style={{color: tintColor}}/>
         ),
         title: 'Sair',
-        drawerLockMode: 'locked-closed'
+        //drawerLockMode: 'locked-closed'
     }
-  }
+  },
+  Splash: {
+    screen: Splash,
+    navigationOptions: {
+      drawerLabel: () => null
+    }
+  },
 },{
   contentComponent: customDrawerComponent,
+  initialRouteName: 'Splash',
   contentOptions: {
     activeTintColor: '#F1592A'
   }
 })
 
-const AppSwitchNavigator = createSwitchNavigator({
-  Welcome: { screen: Splash },
-  Home: { screen: AppDrawerNavigator },
-  RelatorioMensal : {screen: RelMensal},
-  Login: { screen: LoginPage },
-})
+// const AppSwitchNavigator = createSwitchNavigator({
+//   Welcome: { screen: Splash },
+//   Home: { screen: HomePage },
+//   RelatorioMensal: {screen: RelMensal},
+//   Login: { screen: LoginPage },
+// },{
+//   initialRouteName: 'Home'
+// })
 
 
 

@@ -4,7 +4,7 @@ import { View, StyleSheet } from "react-native";
 import {
   Icon,
   Button,
-  Container  
+  Container,  
 } from "native-base";
 import { MyHeader } from "../components/MyHeader";
 import HomeInfo from "../components/HomeInfo";

@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 
-import { View, StyleSheet, Image, Text, Animated, Easing, Dimensions, StatusBar } from "react-native";
+import { View, StyleSheet, Animated, Easing, Dimensions, StatusBar } from "react-native";
 
 const screenDimesions = Dimensions.get('window')
 
 export default class Splash extends Component {
-    // componentWillMount(){
-    //     
-    // }
 
     componentWillMount() {
+       
         this.barrinhaAnimada = new Animated.Value(0)
         this.caminhaoAnimado = new Animated.Value(0)
         this.apresentarElementos = new Animated.Value(0)
@@ -17,6 +15,7 @@ export default class Splash extends Component {
         setTimeout(() => {
             this.props.navigation.navigate('Login')
         }, 2200)
+
     }
     componentDidMount() {
         //Barra

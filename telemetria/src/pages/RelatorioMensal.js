@@ -6,7 +6,6 @@ import {
   Container  
 } from "native-base";
 import { MyHeader } from "../components/MyHeader";
-import HomeInfo from "../components/HomeInfo";
 import { EstiloHeader } from "../Estilo";
 
 export default class RelMensal extends Component {

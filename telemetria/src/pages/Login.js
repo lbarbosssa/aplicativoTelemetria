@@ -24,8 +24,8 @@ export default class LoginPage extends Component {
   }
 
   onPress(){
-    console.log(this.state.driverCode)
     if (this.state.driverCode === '1234567'){
+      console.log(this.state.driverCode)
       this.props.navigation.navigate('Home')
     }
   }
@@ -35,7 +35,6 @@ export default class LoginPage extends Component {
   render() {
     //const { driverCode } = this.state
     return (
-
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle='light-content' />
         <KeyboardAvoidingView behavior="padding" style={styles.safeArea}>
