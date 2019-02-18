@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   StatusBar
 } from "react-native";
+import { MyHeader } from "../components/MyHeader";
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ export default class LoginPage extends Component {
     //const { driverCode } = this.state
     return (
       <SafeAreaView style={styles.container}>
+          <MyHeader transparent/>
         <StatusBar barStyle='light-content' />
         <KeyboardAvoidingView behavior="padding" style={styles.safeArea}>
           <Text style={styles.text1nd}>Braspress</Text>

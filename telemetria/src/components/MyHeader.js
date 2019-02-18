@@ -14,9 +14,8 @@ import { EstiloHeader } from '../Estilo';
 
 
 export const MyHeader = props => {
-  return (
-        
-      <Header style={EstiloHeader.header} androidStatusBarColor='#003366' iosBarStyle='light-content'>
+  return ( 
+      <Header style={EstiloHeader.header} androidStatusBarColor='#003366' iosBarStyle='light-content' transparent={props.transparent}>
         <Left>{props.children}</Left>
         <Body>
           <Title style={EstiloHeader.title}>{props.title}</Title>

@@ -17,7 +17,6 @@ export default class RelMensal extends Component {
           <Icon name="arrow-back" style={EstiloHeader.btnHeader} onPress={() => this.props.navigation.goBack()} />
         </Button>
       </MyHeader>
-    
       </Container>
     );
   }
