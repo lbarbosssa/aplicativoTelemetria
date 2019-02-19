@@ -31,7 +31,7 @@ class HomeInfo extends Component {
                     </CardItem>
                     <CardItem footer>
                         <Text>
-                            <Icon name='sad-cry' type='FontAwesome5' style={Estilo.cardIcons}/> Seu nivel de direção está a baixo da média!
+                            Seu nivel de direção está a baixo da média!
                         </Text>
                     </CardItem>
                 </Card>

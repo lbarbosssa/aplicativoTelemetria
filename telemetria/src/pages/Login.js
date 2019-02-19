@@ -10,13 +10,15 @@ import {
   StatusBar
 } from "react-native";
 import { MyHeader } from "../components/MyHeader";
+import { AppConsumer } from "../../context/appContext";
 
-export default class LoginPage extends Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      driverCode: ''
+      driverCode: '',
+
     }
   }
 
@@ -24,41 +26,48 @@ export default class LoginPage extends Component {
     this.setState({ driverCode })
   }
 
-  onPress(){
-    if (this.state.driverCode === '1234567'){
-      console.log(this.state.driverCode)
-      this.props.navigation.navigate('Home')
-    }
-  }
-
-
+  // onPress(){
+  //   if (this.state.driverCode === '1234567' || this.state.driverCode === ''){
+  //     console.log(this.state.driverCode)
+  //     this.props.navigation.navigate('Home')
+  //   }
+  // }
 
   render() {
     //const { driverCode } = this.state
+    console.log('props', this.props)
     return (
-      <SafeAreaView style={styles.container}>
-          <MyHeader transparent/>
-        <StatusBar barStyle='light-content' />
-        <KeyboardAvoidingView behavior="padding" style={styles.safeArea}>
-          <Text style={styles.text1nd}>Braspress</Text>
-          <Text style={styles.text2nd}>Telemetria</Text>
-          <TextInput
-            style={[styles.input, styles.textGlobal]}
-            placeholder="Senha telemetria"
-            placeholderTextColor="#dbdbdb"
-            keyboardType="numeric"
-            secureTextEntry
-            maxLength={7}
-            onChangeText={(driverCode) => this.onChangeText(driverCode)}
-          />
-          <TouchableOpacity style={styles.button} onPress={() => this.onPress()}>
-            <Text style={[styles.textButton, styles.textGlobal]}> Entrar </Text>
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
-      </SafeAreaView>
+      <AppConsumer>
+        {context => (
+
+          <SafeAreaView style={styles.container}>
+            <MyHeader transparent />
+            <StatusBar barStyle='light-content' />
+            <KeyboardAvoidingView behavior="padding" style={styles.safeArea}>
+              <Text style={styles.text1nd}>Braspress</Text>
+              <Text style={styles.text2nd}>Telemetria</Text>
+              <TextInput
+                style={[styles.input, styles.textGlobal]}
+                placeholder="Senha telemetria"
+                placeholderTextColor="#dbdbdb"
+                keyboardType="numeric"
+                secureTextEntry
+                maxLength={7}
+                onChangeText={(driverCode) => this.onChangeText(driverCode)}
+              />
+              <TouchableOpacity style={styles.button} onPress={() => context.login(this.state.driverCode, this.props.navigation)}>
+                <Text style={[styles.textButton, styles.textGlobal]}> Entrar </Text>
+              </TouchableOpacity>
+              <Text style={[styles.textButton, styles.textGlobal]}>{context.loginMsg}</Text>
+            </KeyboardAvoidingView>
+          </SafeAreaView>
+        )}
+      </AppConsumer>
     );
   }
 }
+
+export default LoginPage
 
 const styles = StyleSheet.create({
   container: {

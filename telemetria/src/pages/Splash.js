@@ -2,13 +2,11 @@ import React, { Component } from "react";
 
 import { View, StyleSheet, Animated, Easing, Dimensions, StatusBar } from "react-native";
 import { MyHeader } from "../components/MyHeader";
+import { AppConsumer } from "../../context/appContext";
 
 const screenDimesions = Dimensions.get('window')
 
 export default class Splash extends Component {
-    state = {
-        mostrouSplash: true
-    }
 
     componentWillMount() {
 
@@ -17,7 +15,7 @@ export default class Splash extends Component {
         this.barrinhaAnimada = new Animated.Value(0)
         this.caminhaoAnimado = new Animated.Value(0)
         this.apresentarElementos = new Animated.Value(0)
-        
+
         setTimeout(() => {
             this.props.navigation.navigate('Login')
         }, 2200)
@@ -27,7 +25,7 @@ export default class Splash extends Component {
         //Barra
         Animated.timing(this.barrinhaAnimada, {
             toValue: screenDimesions.width,
-            duration: 900,     
+            duration: 900,
         }).start()
 
         //Caminhao
@@ -41,31 +39,29 @@ export default class Splash extends Component {
 
         //Apresentando elementos
         setTimeout(() => {
-        Animated.timing(this.apresentarElementos, {
-            toValue: 1.4,
-            duration: 700,   
-        }).start()
+            Animated.timing(this.apresentarElementos, {
+                toValue: 1.4,
+                duration: 700,
+            }).start()
         }, 700)
-
-
-
     }
 
     render() {
         const barrinha = { width: this.barrinhaAnimada }
-        const caminhao = { marginLeft: this.caminhaoAnimado}
-        const apresentarElementos = { opacity: this.apresentarElementos}
+        const caminhao = { marginLeft: this.caminhaoAnimado }
+        const apresentarElementos = { opacity: this.apresentarElementos }
 
         return (
+
             <View style={styles.container}>
-            <MyHeader transparent/>
-            <StatusBar barStyle='light-content'/>
-                <Animated.Image 
-                source={require('../../assets/imgs/truck.png')} 
-                style={[styles.truck, caminhao, apresentarElementos]}/>
+                <MyHeader transparent />
+                <StatusBar barStyle='light-content' />
+                <Animated.Image
+                    source={require('../../assets/imgs/truck.png')}
+                    style={[styles.truck, caminhao, apresentarElementos]} />
                 <Animated.View style={[styles.bar, barrinha]} />
                 <Animated.Text style={[styles.textBottom, apresentarElementos]} >Telemetria</Animated.Text>
-                
+
             </View>
         )
     }
@@ -93,12 +89,12 @@ const styles = StyleSheet.create({
         height: 100
     },
     textBottom: {
-    fontSize: 20,
-    color: "#F1592A",
-    paddingBottom: 5,
-    fontFamily: 'Bitter-Italic',
-    alignSelf: 'flex-end',
-    paddingRight: 35
-  },
+        fontSize: 20,
+        color: "#F1592A",
+        paddingBottom: 5,
+        fontFamily: 'Bitter-Italic',
+        alignSelf: 'flex-end',
+        paddingRight: 35
+    },
 
 })

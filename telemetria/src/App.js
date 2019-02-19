@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 import { DrawerNavigator, DrawerItems, createSwitchNavigator, createAppContainer } from 'react-navigation'
 import { Icon } from 'native-base';
 
@@ -7,13 +7,14 @@ import Splash from './pages/Splash'
 import LoginPage from './pages/Login'
 import HomePage from './pages/Home'
 import RelMensal from './pages/RelatorioMensal';
+import { AppProvider } from '../context/appContext';
 
 
 
 
 
 const customDrawerComponent = (props) => (
-  <SafeAreaView style={{flex: 1}}>
+  <SafeAreaView style={{ flex: 1 }}>
     <View style={styles.headerDrawer}>
       <View style={styles.headerDrawerImg} />
     </View>
@@ -27,40 +28,43 @@ const customDrawerComponent = (props) => (
 
 class App extends Component {
   render() {
-    return <AppSwitchNavigator />
-            
-}
+    return (
+      <AppProvider>
+        <AppSwitchNavigator />
+      </AppProvider>
+    )
+
+  }
 }
 export default App
 
 
 const AppDrawerNavigator = DrawerNavigator({
-  
-   Home: {
+  Home: {
     screen: HomePage,
     navigationOptions: {
-        drawerIcon: ({tintColor}) =>  (
-            <Icon name='home' style={{color: tintColor}}/>
-        )
+      drawerIcon: ({ tintColor }) => (
+        <Icon name='home' style={{ color: tintColor }} />
+      )
     }
   },
   Rel1: {
     screen: RelMensal,
     navigationOptions: {
-        drawerIcon: ({tintColor}) =>  (
-            <Icon name='list' style={{color: tintColor}}/>
-        ),
-        title: 'Relatório Mensal'
+      drawerIcon: ({ tintColor }) => (
+        <Icon name='list' style={{ color: tintColor }} />
+      ),
+      title: 'Relatório Mensal'
     }
   },
   Login: {
     screen: LoginPage,
     navigationOptions: {
-        drawerIcon: ({tintColor}) =>  (
-            <Icon name='log-out' style={{color: tintColor}}/>
-        ),
-        title: 'Sair',
-        drawerLockMode: 'locked-closed'
+      drawerIcon: ({ tintColor }) => (
+        <Icon name='log-out' style={{ color: tintColor }} />
+      ),
+      title: 'Sair',
+      //drawerLockMode: 'locked-closed'
     }
   },
   Splash: {
@@ -69,20 +73,20 @@ const AppDrawerNavigator = DrawerNavigator({
       drawerLabel: () => null
     }
   },
-},{
-  contentComponent: customDrawerComponent,
-  //initialRouteName: 'Splash',
-  contentOptions: {
-    activeTintColor: '#F1592A'
-  }
-})
+}, {
+    contentComponent: customDrawerComponent,
+    //initialRouteName: 'Splash',
+    contentOptions: {
+      activeTintColor: '#F1592A'
+    }
+  })
 
- const AppSwitchNavigator = createSwitchNavigator({
-   Welcome: { screen: Splash },
-   Home: { screen: AppDrawerNavigator },
-   RelatorioMensal: {screen: RelMensal},
-   Login: { screen: LoginPage },
- })
+export const AppSwitchNavigator = createSwitchNavigator({
+  Welcome: { screen: Splash },
+  Home: { screen: AppDrawerNavigator },
+  RelatorioMensal: { screen: RelMensal },
+  Login: { screen: LoginPage },
+})
 
 
 
@@ -99,5 +103,5 @@ const styles = StyleSheet.create({
     width: 120,
     borderRadius: 60,
   }
-  
+
 });

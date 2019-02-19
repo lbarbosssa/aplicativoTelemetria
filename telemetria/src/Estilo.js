@@ -21,7 +21,8 @@ const Estilo = StyleSheet.create({
 export const EstiloHeader = StyleSheet.create({
     header: {
     backgroundColor: '#003D7B',
-    color: '#fff'
+    color: '#fff',
+    marginBottom: 10
   },
     btnHeader: {
         color: '#F1592A'
