@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
-import { DrawerNavigator, DrawerItems, createSwitchNavigator } from 'react-navigation'
+import { DrawerNavigator, DrawerItems, createSwitchNavigator, createAppContainer } from 'react-navigation'
 import { Icon } from 'native-base';
 
 import Splash from './pages/Splash'
@@ -27,7 +27,8 @@ const customDrawerComponent = (props) => (
 
 class App extends Component {
   render() {
-    return <AppDrawerNavigator /> 
+    return <AppSwitchNavigator />
+            
 }
 }
 export default App
@@ -70,20 +71,18 @@ const AppDrawerNavigator = DrawerNavigator({
   },
 },{
   contentComponent: customDrawerComponent,
-  initialRouteName: 'Splash',
+  //initialRouteName: 'Splash',
   contentOptions: {
     activeTintColor: '#F1592A'
   }
 })
 
-// const AppSwitchNavigator = createSwitchNavigator({
-//   Welcome: { screen: Splash },
-//   Home: { screen: HomePage },
-//   RelatorioMensal: {screen: RelMensal},
-//   Login: { screen: LoginPage },
-// },{
-//   initialRouteName: 'Home'
-// })
+ const AppSwitchNavigator = createSwitchNavigator({
+   Welcome: { screen: Splash },
+   Home: { screen: AppDrawerNavigator },
+   RelatorioMensal: {screen: RelMensal},
+   Login: { screen: LoginPage },
+ })
 
 
 

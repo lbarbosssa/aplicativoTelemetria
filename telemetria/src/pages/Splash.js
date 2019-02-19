@@ -6,13 +6,18 @@ import { MyHeader } from "../components/MyHeader";
 const screenDimesions = Dimensions.get('window')
 
 export default class Splash extends Component {
+    state = {
+        mostrouSplash: true
+    }
 
     componentWillMount() {
-       
+
+        //this.props.navigation.navigate('Login')
+
         this.barrinhaAnimada = new Animated.Value(0)
         this.caminhaoAnimado = new Animated.Value(0)
         this.apresentarElementos = new Animated.Value(0)
-
+        
         setTimeout(() => {
             this.props.navigation.navigate('Login')
         }, 2200)
@@ -60,7 +65,7 @@ export default class Splash extends Component {
                 style={[styles.truck, caminhao, apresentarElementos]}/>
                 <Animated.View style={[styles.bar, barrinha]} />
                 <Animated.Text style={[styles.textBottom, apresentarElementos]} >Telemetria</Animated.Text>
-
+                
             </View>
         )
     }
