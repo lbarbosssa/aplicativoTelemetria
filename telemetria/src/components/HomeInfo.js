@@ -23,10 +23,10 @@ class HomeInfo extends Component {
                 </CardItem>
                     <CardItem>
                         <Body>
-                            <Text style={Estilo.cardText}>Fabio Assunção</Text>
-                            <Text style={Estilo.cardText}>12345678</Text>
-                            <Text style={Estilo.cardText}>Poa Transferência</Text>
-                            <Text style={Estilo.cardText}>5 Km/l </Text>
+                            <Text style={Estilo.cardText} numberOfLines={1}>Fabio Assunção</Text>
+                            <Text style={Estilo.cardText} numberOfLines={1}>12345678</Text>
+                            <Text style={Estilo.cardText} numberOfLines={1}>Poa Transferência</Text>
+                            <Text style={Estilo.cardText} numberOfLines={1}>5 Km/l </Text>
                         </Body>
                     </CardItem>
                     <CardItem footer>

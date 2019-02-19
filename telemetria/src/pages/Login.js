@@ -35,7 +35,7 @@ class LoginPage extends Component {
 
   render() {
     //const { driverCode } = this.state
-    console.log('props', this.props)
+
     return (
       <AppConsumer>
         {context => (
