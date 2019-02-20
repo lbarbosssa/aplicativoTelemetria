@@ -61,6 +61,9 @@
 		088C05124E03433E87E630A6 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4B8C4852F54438AAF163193 /* rubicon-icon-font.ttf */; };
 		B99A902B04EA47CDB5BEB3BB /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA5DC0E2E414EE4A822C147 /* SimpleLineIcons.ttf */; };
 		B3373B953AEB4BE4B039D054 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4767CFC3AB964D5E8071CDED /* Zocial.ttf */; };
+		6F5A058370A54F6AB071BC96 /* STENCIL.TTF in Resources */ = {isa = PBXBuildFile; fileRef = C2EC45C977B14D53B30B0821 /* STENCIL.TTF */; };
+		5C159F431D414848B5443C64 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E884B369CBD457A9F7A8C2E /* Pacifico-Regular.ttf */; };
+		34E436FA7DD74A8ABB3FE447 /* Stencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8647901BD5C449E80E9371D /* Stencil.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,6 +394,9 @@
 		E4B8C4852F54438AAF163193 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3CA5DC0E2E414EE4A822C147 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		4767CFC3AB964D5E8071CDED /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C2EC45C977B14D53B30B0821 /* STENCIL.TTF */ = {isa = PBXFileReference; name = "STENCIL.TTF"; path = "../assets/fonts/STENCIL.TTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3E884B369CBD457A9F7A8C2E /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; name = "Pacifico-Regular.ttf"; path = "../assets/fonts/Pacifico-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B8647901BD5C449E80E9371D /* Stencil.ttf */ = {isa = PBXFileReference; name = "Stencil.ttf"; path = "../assets/fonts/Stencil.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -682,6 +688,9 @@
 				E4B8C4852F54438AAF163193 /* rubicon-icon-font.ttf */,
 				3CA5DC0E2E414EE4A822C147 /* SimpleLineIcons.ttf */,
 				4767CFC3AB964D5E8071CDED /* Zocial.ttf */,
+				C2EC45C977B14D53B30B0821 /* STENCIL.TTF */,
+				3E884B369CBD457A9F7A8C2E /* Pacifico-Regular.ttf */,
+				B8647901BD5C449E80E9371D /* Stencil.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1154,6 +1163,9 @@
 				088C05124E03433E87E630A6 /* rubicon-icon-font.ttf in Resources */,
 				B99A902B04EA47CDB5BEB3BB /* SimpleLineIcons.ttf in Resources */,
 				B3373B953AEB4BE4B039D054 /* Zocial.ttf in Resources */,
+				6F5A058370A54F6AB071BC96 /* STENCIL.TTF in Resources */,
+				5C159F431D414848B5443C64 /* Pacifico-Regular.ttf in Resources */,
+				34E436FA7DD74A8ABB3FE447 /* Stencil.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

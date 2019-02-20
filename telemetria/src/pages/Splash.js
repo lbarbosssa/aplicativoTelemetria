@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { View, StyleSheet, Animated, Easing, Dimensions, StatusBar } from "react-native";
 import { MyHeader } from "../components/MyHeader";
-import { AppConsumer } from "../../context/appContext";
 
 const screenDimesions = Dimensions.get('window')
 

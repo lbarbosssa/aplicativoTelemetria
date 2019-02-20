@@ -7,10 +7,14 @@ import {
   Text,
   TouchableOpacity,
   KeyboardAvoidingView,
-  StatusBar
+  StatusBar,
+  Dimensions
 } from "react-native";
 import { MyHeader } from "../components/MyHeader";
 import { AppConsumer } from "../../context/appContext";
+import { View, } from "native-base";
+
+const screenDimesions = Dimensions.get('window')
 
 class LoginPage extends Component {
   constructor(props) {
@@ -44,8 +48,11 @@ class LoginPage extends Component {
             <MyHeader transparent />
             <StatusBar barStyle='light-content' />
             <KeyboardAvoidingView behavior="padding" style={styles.safeArea}>
-              <Text style={styles.text1nd}>Braspress</Text>
-              <Text style={styles.text2nd}>Telemetria</Text>
+              <View style={styles.textViewer}>
+                <Text style={styles.text1nd}>Braspress</Text>
+                <Text style={styles.text2nd}>Telemetria</Text>    
+              </View>
+              
               <TextInput
                 style={[styles.input, styles.textGlobal]}
                 placeholder="Senha telemetria"
@@ -59,6 +66,7 @@ class LoginPage extends Component {
                 <Text style={[styles.textButton, styles.textGlobal]}> Entrar </Text>
               </TouchableOpacity>
               <Text style={[styles.textButton, styles.textGlobal]}>{context.loginMsg}</Text>
+
             </KeyboardAvoidingView>
           </SafeAreaView>
         )}
@@ -78,7 +86,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     justifyContent: "center",
-    paddingHorizontal: 20
+    paddingHorizontal: screenDimesions.width / 30
   },
   input: {
     textAlign: "center",
@@ -86,16 +94,14 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 6
   },
-  image: {
-    // flex: 1,
-    // width: screenDimesions.width *0.1000,
-    // height: screenDimesions.height *0.33,
+  textViewer: {
+    alignSelf: 'center'
   },
   text1nd: {
     fontSize: 55,
     color: "#F1592A",
     paddingLeft: 10,
-    fontFamily: "Bitter-Italic"
+    fontFamily: "Stencil",
   },
   text2nd: {
     fontSize: 20,

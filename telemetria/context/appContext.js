@@ -6,7 +6,8 @@ const initialState = {
     driverCode: '',
     logar: false,
     loginMsg: '',
-    objHomeInfo: []
+    objHomeInfo: [],
+    loading: false
 }
 
 
@@ -31,7 +32,7 @@ export class AppProvider extends React.Component{
         axios.post('http://172.16.75.99:8080/v1/telemetria/login',`driverCode=${driverCode}`, {header: headers})
             .then(data => {
                 //console.log(data.data)
-                this.setState({ driverCode, logar: true, loginMsg: 'Ok', objHomeInfo: data.data })
+                this.setState({ driverCode, logar: true, loginMsg: '', objHomeInfo: data.data })
                 console.log(this.state.objHomeInfo)
                 nav.navigate('Home') 
             }).catch(error =>{
