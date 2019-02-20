@@ -8,6 +8,7 @@ import LoginPage from './pages/Login'
 import HomePage from './pages/Home'
 import RelMensal from './pages/RelatorioMensal';
 import { AppProvider } from '../context/appContext';
+import Logoff from './components/Logoff'
 
 
 
@@ -57,14 +58,14 @@ const AppDrawerNavigator = DrawerNavigator({
       title: 'Relatório Mensal'
     }
   },
-  Login: {
-    screen: LoginPage,
+  Logoff: {
+    screen: Logoff,
     navigationOptions: {
       drawerIcon: ({ tintColor }) => (
         <Icon name='log-out' style={{ color: tintColor }} />
       ),
       title: 'Sair',
-      //drawerLockMode: 'locked-closed'
+      drawerLockMode: 'locked-closed'
     }
   },
   Splash: {

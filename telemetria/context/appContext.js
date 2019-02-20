@@ -20,6 +20,15 @@ export class AppProvider extends React.Component{
         this.state = initialState
     }
 
+    logoff = (token, nav) => {
+         axios.get(`http://172.16.75.99:8080/v1/telemetria/logoff/${token}`)
+             .then(() => {
+                 nav.navigate('Login')
+                 this.setState({ loading: false, loginMsg: 'Obrigado por verificar seus relatórios', objHomeInfo: [] })
+                })
+             .catch(error => console.log('Erro ao sair', error))
+    }
+
     login = (driverCode, nav) => {
         this.setState({loading: true, loginMsg: ''})
         const headers= {
@@ -36,7 +45,9 @@ export class AppProvider extends React.Component{
                 }).catch(error =>{
                     console.log('Deu rum: ', error)
                     this.setState({ loading: false, loginMsg: 'Senha incorreta' }) 
-                }) 
+                })
+                // this.setState({ loading: false })
+                // nav.navigate('Home')  
         }, 1000);
     }
      
@@ -45,6 +56,7 @@ export class AppProvider extends React.Component{
             <AppContext.Provider
                value={{
                    driverCode: this.state.driverCode,
+                   logoff: this.logoff,
                    login: this.login,
                    loginMsg: this.state.loginMsg,
                    objHomeInfo: this.state.objHomeInfo,
