@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { MyHeader } from "../components/MyHeader";
 import { AppConsumer } from "../../context/appContext";
-import { View, } from "native-base";
+import { View, Spinner } from "native-base";
 
 const screenDimesions = Dimensions.get('window')
 
@@ -28,6 +28,10 @@ class LoginPage extends Component {
 
   onChangeText(driverCode) {
     this.setState({ driverCode })
+  }
+
+  renderLoader() {
+    return <Spinner color='red' />
   }
 
   // onPress(){
@@ -50,9 +54,9 @@ class LoginPage extends Component {
             <KeyboardAvoidingView behavior="padding" style={styles.safeArea}>
               <View style={styles.textViewer}>
                 <Text style={styles.text1nd}>Braspress</Text>
-                <Text style={styles.text2nd}>Telemetria</Text>    
+                <Text style={styles.text2nd}>Telemetria</Text>
               </View>
-              
+
               <TextInput
                 style={[styles.input, styles.textGlobal]}
                 placeholder="Senha telemetria"
@@ -62,9 +66,13 @@ class LoginPage extends Component {
                 maxLength={7}
                 onChangeText={(driverCode) => this.onChangeText(driverCode)}
               />
-              <TouchableOpacity style={styles.button} onPress={() => context.login(this.state.driverCode, this.props.navigation)}>
-                <Text style={[styles.textButton, styles.textGlobal]}> Entrar </Text>
-              </TouchableOpacity>
+              {
+                context.loading
+                  ? <Spinner color="#F1592A" />
+                  : <TouchableOpacity style={styles.button} onPress={() => context.login(this.state.driverCode, this.props.navigation)}>
+                    <Text style={[styles.textButton, styles.textGlobal]}> Entrar </Text>
+                  </TouchableOpacity>
+              }
               <Text style={[styles.textButton, styles.textGlobal]}>{context.loginMsg}</Text>
 
             </KeyboardAvoidingView>
