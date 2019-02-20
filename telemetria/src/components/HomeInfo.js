@@ -28,15 +28,15 @@ class HomeInfo extends Component {
                                 <Body>
                                     <Text style={Estilo.cardText} numberOfLines={1}>{context.objHomeInfo.driverName}</Text>
                                     <Text style={Estilo.cardText} numberOfLines={1}>{context.objHomeInfo.idFuncionario}</Text>
-                                    <Text style={Estilo.cardText} numberOfLines={1}>Poa Transferência</Text>
-                                    <Text style={Estilo.cardText} numberOfLines={1}>5 Km/l </Text>
+                                    <Text style={Estilo.cardText} numberOfLines={1}>{context.objHomeInfo.filial}</Text>
+                                    <Text style={Estilo.cardText} numberOfLines={1}>{context.objHomeInfo.totalKmLitros} </Text>
                                     <Text style={Estilo.cardText} numberOfLines={1}>{context.objHomeInfo.totalKmRodados} Rodados</Text>
                                 </Body>
                             </CardItem>
                             <CardItem footer>
                                 <Text>
                                     Seu nivel de direção está a baixo da média!
-                        </Text>
+                                </Text>
                             </CardItem>
                         </Card>
                     </Content>
