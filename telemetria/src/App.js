@@ -17,9 +17,10 @@ import Logoff from './components/Logoff'
 const customDrawerComponent = (props) => (
   <SafeAreaView style={styles.drawer}>
     <View style={styles.headerDrawer}>
-      <Text style={styles.headerText1}>Braspress</Text>
-      <Text style={styles.headerText2}>Telemetria</Text>  
-      {/* <View style={styles.headerDrawerImg} /> */}
+      <View style={styles.headerDrawerImg}>
+        <Text style={styles.headerText1}>Braspress</Text>
+        <Text style={styles.headerText2}>Telemetria</Text>
+      </View>
     </View>
     <ScrollView>
       <DrawerItems {...props} />
@@ -107,22 +108,21 @@ const styles = StyleSheet.create({
     borderBottomColor: '#F1592A',
     marginBottom: 10
   },
-   headerDrawerImg: {
-     backgroundColor: '#ddd',
-     height: 120,
-     width: 250,
-     borderRadius: 6,
-   },
-   headerText1: {
-     fontFamily: 'Stencil',
-     fontSize: 40,
-     color: '#F1592A'
-   },
-   headerText2: {
+  headerDrawerImg: {
+    //backgroundColor: '#ddd',
+    //height: 120,
+    //width: 225,
+    //borderRadius: 6,
+  },
+  headerText1: {
+    fontFamily: 'Stencil',
+    fontSize: 40,
+    color: '#F1592A'
+  },
+  headerText2: {
     fontFamily: 'Bitter-Italic',
     fontSize: 20,
     alignSelf: 'flex-end',
-    paddingRight: 30,
     color: '#F1592A'
   }
 
