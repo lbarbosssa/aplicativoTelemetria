@@ -15,9 +15,11 @@ import Logoff from './components/Logoff'
 
 
 const customDrawerComponent = (props) => (
-  <SafeAreaView style={{ flex: 1 }}>
+  <SafeAreaView style={styles.drawer}>
     <View style={styles.headerDrawer}>
-      <View style={styles.headerDrawerImg} />
+      <Text style={styles.headerText1}>Braspress</Text>
+      <Text style={styles.headerText2}>Telemetria</Text>  
+      {/* <View style={styles.headerDrawerImg} /> */}
     </View>
     <ScrollView>
       <DrawerItems {...props} />
@@ -46,7 +48,8 @@ const AppDrawerNavigator = DrawerNavigator({
     navigationOptions: {
       drawerIcon: ({ tintColor }) => (
         <Icon name='home' style={{ color: tintColor }} />
-      )
+      ),
+      title: 'Inicio'
     }
   },
   Rel1: {
@@ -92,17 +95,35 @@ export const AppSwitchNavigator = createSwitchNavigator({
 
 
 const styles = StyleSheet.create({
+  drawer: {
+    flex: 1,
+  },
   headerDrawer: {
-    height: 150,
+    height: 100,
     backgroundColor: '#fffffe',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderBottomWidth: 2,
+    borderBottomColor: '#F1592A',
+    marginBottom: 10
   },
-  headerDrawerImg: {
-    backgroundColor: '#ddd',
-    height: 120,
-    width: 120,
-    borderRadius: 60,
+   headerDrawerImg: {
+     backgroundColor: '#ddd',
+     height: 120,
+     width: 250,
+     borderRadius: 6,
+   },
+   headerText1: {
+     fontFamily: 'Stencil',
+     fontSize: 40,
+     color: '#F1592A'
+   },
+   headerText2: {
+    fontFamily: 'Bitter-Italic',
+    fontSize: 20,
+    alignSelf: 'flex-end',
+    paddingRight: 30,
+    color: '#F1592A'
   }
 
 });
