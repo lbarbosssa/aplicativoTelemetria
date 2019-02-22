@@ -6,7 +6,11 @@ const initialState = {
     driverCode: '',
     loginMsg: '',
     objHomeInfo: [],
-    loading: false
+    loading: false,
+    objRelMensa: [{
+        mes: 'Janeiro',
+        ano: '2019'
+    }]
 }
 
 
@@ -21,7 +25,8 @@ export class AppProvider extends React.Component{
     }
 
     logoff = (token, nav) => {
-         axios.get(`http://172.16.75.99:8080/v1/telemetria/logoff/${token}`)
+        //Finaliza a sessão      
+        axios.get(`http://172.16.75.99:8080/v1/telemetria/logoff/${token}`)
              .then(() => {
                  nav.navigate('Login')
                  this.setState({ loading: false, loginMsg: 'Obrigado por verificar seus relatórios', objHomeInfo: [] })
@@ -30,10 +35,12 @@ export class AppProvider extends React.Component{
     }
 
     login = (driverCode, nav) => {
+        //Loga e recebe dados da tela inicial
         this.setState({loading: true, loginMsg: ''})
         const headers= {
             'Content-Type': 'application/x-www-form-urlencoded' 
         }
+
 
         setTimeout(() => {
             axios.post('http://172.16.75.99:8080/v1/telemetria/login',`driverCode=${driverCode}`, {header: headers})
@@ -47,7 +54,7 @@ export class AppProvider extends React.Component{
                     this.setState({ loading: false, loginMsg: 'Senha incorreta' }) 
                 })
                 // this.setState({ loading: false })
-                // nav.navigate('Home')  
+                 nav.navigate('Home')  
         }, 1000);
     }
      
