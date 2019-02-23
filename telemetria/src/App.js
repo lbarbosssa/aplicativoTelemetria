@@ -88,8 +88,8 @@ const AppDrawerNavigator = DrawerNavigator({
 
 export const AppSwitchNavigator = createSwitchNavigator({
   RelatorioMensal: { screen: RelMensal },
-  Welcome: { screen: Splash },
   Home: { screen: AppDrawerNavigator },
+  Welcome: { screen: Splash },
   Login: { screen: LoginPage },
 })
 
